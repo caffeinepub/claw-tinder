@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0rem;
+
+    /* Neon-noir palette (light mode fallback — kept dark) */
+    --background: 0.08 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.14 0 0;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.85 0.18 195;
+    --primary-foreground: 0.08 0 0;
+    --secondary: 0.16 0 0;
+    --secondary-foreground: 0.85 0 0;
+    --muted: 0.14 0 0;
+    --muted-foreground: 0.55 0 0;
+    --accent: 0.65 0.28 330;
+    --accent-foreground: 0.08 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.22 0 0;
+    --input: 0.18 0 0;
+    --ring: 0.85 0.18 195;
+    --chart-1: 0.85 0.18 195;
+    --chart-2: 0.65 0.28 330;
+    --chart-3: 0.85 0.18 60;
+    --chart-4: 0.7 0.2 270;
+    --chart-5: 0.75 0.22 150;
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.85 0 0;
+    --sidebar-primary: 0.85 0.18 195;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.14 0 0;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.85 0.18 195;
+  }
+
+  .dark {
+    --background: 0.08 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.14 0 0;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.85 0.18 195;
+    --primary-foreground: 0.08 0 0;
+    --secondary: 0.16 0 0;
+    --secondary-foreground: 0.85 0 0;
+    --muted: 0.14 0 0;
+    --muted-foreground: 0.55 0 0;
+    --accent: 0.65 0.28 330;
+    --accent-foreground: 0.08 0 0;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 0.22 0 0;
+    --input: 0.18 0 0;
+    --ring: 0.85 0.18 195;
+    --chart-1: 0.85 0.18 195;
+    --chart-2: 0.65 0.28 330;
+    --chart-3: 0.85 0.18 60;
+    --chart-4: 0.7 0.2 270;
+    --chart-5: 0.75 0.22 150;
+    --sidebar: 0.1 0 0;
+    --sidebar-foreground: 0.85 0 0;
+    --sidebar-primary: 0.85 0.18 195;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.14 0 0;
+    --sidebar-accent-foreground: 0.85 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.85 0.18 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Space Mono", monospace;
+    background-color: #0d0d0d;
+    color: #e5e5e5;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Mono", monospace;
+  }
+}
+
+@layer utilities {
+  /* Neon glow effects */
+  .glow-cyan {
+    text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff40;
+  }
+
+  .glow-magenta {
+    text-shadow: 0 0 10px #ff00aa, 0 0 20px #ff00aa40;
+  }
+
+  .shadow-neon-cyan {
+    box-shadow: 0 0 15px #00f5ff40, 0 0 30px #00f5ff20, inset 0 0 15px #00f5ff10;
+  }
+
+  .shadow-neon-cyan-sm {
+    box-shadow: 0 0 8px #00f5ff40, 0 0 16px #00f5ff20;
+  }
+
+  .shadow-neon-magenta {
+    box-shadow: 0 0 15px #ff00aa40, 0 0 30px #ff00aa20, inset 0 0 15px #ff00aa10;
+  }
+
+  .shadow-neon-magenta-sm {
+    box-shadow: 0 0 8px #ff00aa40, 0 0 16px #ff00aa20;
+  }
+
+  .shadow-neon-magenta-lg {
+    box-shadow: 0 0 25px #ff00aa60, 0 0 50px #ff00aa30;
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Grid pattern background */
+  .bg-grid-pattern {
+    background-image: linear-gradient(
+        rgba(0, 245, 255, 0.05) 1px,
+        transparent 1px
+      ), linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Radial gradient */
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
+  }
+}
+
+@layer components {
+  /* Animated gradient keyframes */
+  @keyframes gradient-x {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes float-delayed {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 4s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float-delayed 4s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+}
